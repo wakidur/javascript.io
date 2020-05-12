@@ -1,12 +1,11 @@
 /**
  * Object-Oriented Porgramming (OOP)
- * 
+ *
  */
 exports.objectOrientedProgramming = () => {
-
-    // step - 1: Basics ; 
-    // Object Oriented Programming style 
-    // You define (and create) a JavaScript object with an object literal 
+    // step - 1: Basics ;
+    // Object Oriented Programming style
+    // You define (and create) a JavaScript object with an object literal
     const circle = {
         radius: 1,
         location: {
@@ -14,15 +13,13 @@ exports.objectOrientedProgramming = () => {
             y: 1,
         },
         isVisible: true,
-        draw: function () {
-            console.log("draw");
-        }
+        draw() { },
     };
 
     circle.draw();
 
-    // step - 2  : Factory Function ; 
-    // 
+    // step - 2  : Factory Function ;
+    //
     function createCircle(radius) {
         // return {
         //     radius: radius,
@@ -34,9 +31,9 @@ exports.objectOrientedProgramming = () => {
         return {
             radius, // Property
             draw() { // Method
-                console.log("Draw Method")
-            }
-        }
+                console.log("Draw Method");
+            },
+        };
     }
 
     const circle1 = createCircle(1);
@@ -53,7 +50,7 @@ exports.objectOrientedProgramming = () => {
         this.radius = radius;
         this.draw = function () {
             console.log("Draw Method");
-        }
+        };
     }
 
     const circleCon = new Circle(1);
@@ -61,10 +58,10 @@ exports.objectOrientedProgramming = () => {
 
     // Step - 4 : Dynamic Nature of Object
     const car = {
-        name: "Volvo"
-    }
+        name: "Volvo",
+    };
     car.color = "Yellow";
-    car.draw = function () {}
+    car.draw = function () {};
 
     delete car.color;
 
@@ -72,56 +69,60 @@ exports.objectOrientedProgramming = () => {
 
 
     // Step - 5 : Constructor Property
-    // Step - 6 : Function are Object 
+    // Step - 6 : Function are Object
 
     function CircleFnObj(radius) {
         this.radius = radius;
         this.draw = function () {
-            console.log('Draw');
-        }
+            console.log("Draw");
+        };
     }
-    CircleFnObj.call({}, 1);
-    CircleFnObj.apply({}, [1, 2, 3]);
-    console.log('call', CircleFnObj.call({}, 1))
+    CircleFnObj.call({
+    }, 1);
+    CircleFnObj.apply({
+    }, [1, 2, 3]);
+    console.log("call", CircleFnObj.call({
+    }, 1));
     const CircleFnObj1 = new CircleFnObj(1);
-    const CircleFnObj2 = CircleFnObj.call({}, 1);
+    const CircleFnObj2 = CircleFnObj.call({
+    }, 1);
     console.log(CircleFnObj1);
     console.log(CircleFnObj2);
 
     // Step - 7 : Value vs. Reference Types
     let xx = 10;
-    let yy = xx;
+    const yy = xx;
 
     xx = 20;
 
-    // Output 
-    // x 
+    // Output
+    // x
     // 20
     // y
     // 10
 
-    let xxR = {
-        value: 10
+    const xxR = {
+        value: 10,
     };
-    let yyR = xxR
+    const yyR = xxR;
 
     xxR.value = 20;
     // xxR {value: 20}
     // yyR {value: 20}
 
     // Primitive are copied by their value
-    // Objects are coppied by their reference 
+    // Objects are coppied by their reference
 
-    let number = 10;
+    const number = 10;
 
     function increase(number) {
         number++;
     }
 
     increase(number);
-    console.log(number)
-    let objIn = {
-        value: 10
+    console.log(number);
+    const objIn = {
+        value: 10,
     };
 
     function increase(objIn) {
@@ -135,31 +136,29 @@ exports.objectOrientedProgramming = () => {
     const EnumeratObj = {
         radius: 23,
         draw() {
-            console.log('Draw ..');
-        }
-    }
+            console.log("Draw ..");
+        },
+    };
 
-    for (const key in EnumeratObj)
-        if (EnumeratObj.hasOwnProperty(key))
-            console.log(key, EnumeratObj[key]);
+    for (const key in EnumeratObj) if (EnumeratObj.hasOwnProperty(key)) console.log(key, EnumeratObj[key]);
 
-    for (const iterator of Object.keys(EnumeratObj))
-        console.log(iterator);
+    for (const iterator of Object.keys(EnumeratObj)) console.log(iterator);
 
-    for (const entry of Object.entries(EnumeratObj))
-        console.log(entry);
+    for (const entry of Object.entries(EnumeratObj)) console.log(entry);
 
-    // 9 cloning an Object 
+    // 9 cloning an Object
     const cloningObj = {
         radius: 1,
         draw() {
             console.log(" Cloning object ");
-        }
-    }
+        },
+    };
 
-    const clonAnother = Object.assign({}, cloningObj);
+    const clonAnother = {
+        ...cloningObj,
+    };
     const cloningSpred = {
-        ...cloningObj
+        ...cloningObj,
     };
 
     console.log(clonAnother);
@@ -168,9 +167,9 @@ exports.objectOrientedProgramming = () => {
     // 10 Garbage Collection
 
     // Exercise 3
-    let address1 = new Address('a', 'b', 'c');
-    let address2 = new Address('a', 'b', 'c');
-    let address3 = address1;
+    const address1 = new Address("a", "b", "c");
+    const address2 = new Address("a", "b", "c");
+    const address3 = address1;
 
     console.log(areEqual(address1, address2));
     console.log(areSame(address1, address2));
@@ -193,28 +192,28 @@ exports.objectOrientedProgramming = () => {
 
 
     // Exercise 4
-    let post = {
-        title: 'a',
-        body: 'b',
-        author: 'c',
+    const post = {
+        title: "a",
+        body: "b",
+        author: "c",
         views: 10,
         comments: [{
-                author: 'a',
-                body: 'b'
-            },
-            {
-                author: 'c',
-                body: 'd'
-            }
+            author: "a",
+            body: "b",
+        },
+        {
+            author: "c",
+            body: "d",
+        },
         ],
-        isLive: true
-    }
+        isLive: true,
+    };
 
-    console.log(post)
+    console.log(post);
 
     // Exercise 5 Constructor Function
 
-    let postCon = new Post('a', 'b', 'c');
+    const postCon = new Post("a", "b", "c");
     console.log(postCon);
 
     function Post(title, body, author) {
@@ -223,29 +222,6 @@ exports.objectOrientedProgramming = () => {
         this.author = author;
         this.views = 0;
         this.comments = [],
-            this.isLive = false;
+        this.isLive = false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+};

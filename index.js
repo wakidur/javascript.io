@@ -203,7 +203,7 @@ const {
 /* 
  ************************************ Control Flow ************************
  */
-//controlFlow();
+// controlFlow();
 /* 
  ************************************ object oriented programming ************************
  */
@@ -219,11 +219,11 @@ const {
 /* 
  ************************************ OOP ************************
  */
-// gettingStartedOOP();
+gettingStartedOOP();
 
 
 /**
  * ******************************* 30 Days of Code *************
  */
 // loopsFirstTenMultiples(2);
-// processDataStringEventAndOdd(2)
+// processDataStringEventAndOdd(2);
