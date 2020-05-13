@@ -419,3 +419,30 @@ exports.breakingRecords = () => {
         console.error(error);
     }
 };
+/**
+ * 16: Birthday Chocolate
+ * Complete the birthday function below.
+ *
+ */
+
+exports.birthdayChocolate = (s, d, m) => {
+//     5
+// 1 2 1 3 2
+// 3 2
+// Your Output (stdout)
+// 2
+    try {
+        const reducer = (a, c) => a + c;
+        let count = 0;
+        for (let i = 0; i < s.length; i += 1) {
+            const temp = s.slice(i, m + i);
+            if (temp.reduce(reducer) === d) {
+                count += 1;
+            }
+        }
+        console.log(count);
+        return count;
+    } catch (error) {
+        console.error(error);
+    }
+};

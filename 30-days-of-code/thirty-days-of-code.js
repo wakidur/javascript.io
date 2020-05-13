@@ -1,46 +1,45 @@
 // 1 Day 0: Hello, World.
-exports.processData = inputString => {
+exports.processData = (inputString) => {
     // This line of code prints the first line of output
     console.log("Hello, World.");
 
     // Write the second line of output that prints the contents of 'inputString' here.
     console.log(inputString);
-}
+};
 
 // 2 Day 1: Data Types
 
 exports.dataTypes = (integer, double, String) => {
-    var i = 4;
-    var d = 4.0;
-    var s = "HackerRank ";
+    const i = 4;
+    const d = 4.0;
+    const s = "HackerRank ";
     // Declare second integer, double, and String variables.
-    let secondInteger = 4;
-    let secondDouble = 4.0;
-    let secondString = "is the best place to learn and practice coding!";
+    const secondInteger = 4;
+    const secondDouble = 4.0;
+    const secondString = "is the best place to learn and practice coding!";
     // Read and save an integer, double, and String to your variables.
     // secondInteger = parseInt(readLine())
     // secondDouble = parseFloat(readLine())
     // secondString = readLine();
     // Print the sum of both integer variables on a new line.
-    console.log(parseInt(i + parseInt(secondInteger)));
+    console.log(parseInt(i + parseInt(secondInteger, 10), 10));
 
     // Print the sum of the double variables on a new line.
     console.log(parseFloat(d + parseFloat(secondDouble)).toFixed(1));
     // Concatenate and print the String variables on a new line
     // The 's' variable above should be printed first.
     console.log(s + secondString);
-}
+};
 
 /**
  * 3 Day 2: Operators
  * Complete the solve function below.
- * @param {*} meal_cost 
- * @param {*} tip_percent 
- * @param {*} tax_percent 
+ * @param {*} meal_cost
+ * @param {*} tip_percent
+ * @param {*} tax_percent
  * solve(meal_cost, tip_percent, tax_percent);
  * solve(12.10, 20, 8);
  */
-
 
 
 exports.solve = (meal_cost, tip_percent, tax_percent) => {
@@ -51,23 +50,22 @@ exports.solve = (meal_cost, tip_percent, tax_percent) => {
     tax = (parseFloat(meal_cost) * (tax_percent / 100)).toFixed(2);
     totalCost = parseFloat(meal_cost) + parseFloat(tip) + parseFloat(tax);
     console.log(Math.round(totalCost));
-
-}
+};
 
 
 /**
  * 4 Day 3: Intro to Conditional Statements
- * 
+ *
  */
 exports.introToConditionalStatements = (N) => {
-    console.log(N)
-    if (N % 2 !== 0) console.log('Weird');
+    console.log(N);
+    if (N % 2 !== 0) console.log("Weird");
     if (N % 2 === 0) {
-        if (N >= 2 && N < 6) console.log('Not Weird');
-        if (N >= 6 && N <= 20) console.log('Weird');
-        if (N > 20) console.log('Not Weird');
+        if (N >= 2 && N < 6) console.log("Not Weird");
+        if (N >= 6 && N <= 20) console.log("Weird");
+        if (N > 20) console.log("Not Weird");
     }
-}
+};
 
 /**
  * 5 Day 4: Class vs. Instance
@@ -82,13 +80,14 @@ class Person {
 
     amIOld() {
         // Do some computations in here and print out the correct statement to the console
-        if (this.age < 13) console.log('You are young.');
-        else if (this.age >= 13 && this.age < 18) console.log('You are a teenager.');
-        else console.log('You are old.');
+        if (this.age < 13) console.log("You are young.");
+        else if (this.age >= 13 && this.age < 18) console.log("You are a teenager.");
+        else console.log("You are old.");
     }
+
     yearPasses() {
         // Increment the age of the person in here
-        this.age++
+        this.age += 1;
     }
 }
 
@@ -98,18 +97,17 @@ const personAge = new Person(14);
 /**
  * 6 Day 5: Loops
  * Task
- * Given an integer, n, print its first 10  multiples. 
+ * Given an integer, n, print its first 10  multiples.
  * Each multiple n * i  (where 1 <= i <= 10 ) should be printed on a new line in the form: n x i = result.
- * 
+ *
  * loopsFirstTenMultiples(2)
  */
 
 exports.loopsFirstTenMultiples = (n) => {
-
-    for (let i = 1; i <= 10; i++) {
-        console.log(`${n} x ${i} = ${parseInt(n * i)}`);
+    for (let i = 1; i <= 10; i += 1) {
+        console.log(`${n} x ${i} = ${parseInt(n * i, 10)}`);
     }
-}
+};
 
 
 /**
@@ -118,42 +116,83 @@ exports.loopsFirstTenMultiples = (n) => {
  */
 
 exports.processDataStringEventAndOdd = (inputs) => {
+    const input = "2\nHacker\nRank";
+    console.log(input.split("\n"));
+    console.log(input.split("\n").slice(1));
 
-    let inputFormet = [2, 'Hacker', 'Rank'];
-    let input = `2\nHacker\nRank`;
-    console.log(input.split('\n'));
-    console.log(input.split('\n').slice(1));
-
-    inputCopy = input.split('\n').slice(1);
+    let inputCopy = input.split("\n").slice(1);
 
 
-    //Enter your code here
-    inputCopy = input.split('\n').slice(1);
-
-
+    // Enter your code here
+    inputCopy = input.split("\n").slice(1);
+    // eslint-disable-next-line no-unused-vars
     for (const s of inputCopy) {
-        let evenIndexed = '';
-        let oddIndexed = '';
-        for (let j = 0; j < s.length; j++) {
+        let evenIndexed = "";
+        let oddIndexed = "";
+        for (let j = 0; j < s.length; j += 1) {
             if (j % 2 === 0) evenIndexed += s[j];
             else oddIndexed += s[j];
         }
-        console.log(`${evenIndexed} ${oddIndexed}`);
+        // console.log(`${evenIndexed} ${oddIndexed}`);
+        return `${evenIndexed} ${oddIndexed}`;
     }
-
-}
+};
 
 /**
  * 8 Day 7: Arrays
  */
 
 exports.arraysReverse = () => {
-    let result = '';
+    let result = "";
     const n = 4;
 
     const arr = [1, 4, 3, 2];
-    for (let i = n - 1; i >= 0; i--) {
-        result += arr[i] + " ";
+    for (let i = n - 1; i >= 0; i -= 1) {
+        result += `${arr[i]} `;
     }
     console.log(result);
-}
+};
+
+/**
+ * 9 Day 8: Dictionaries and Maps
+ */
+
+exports.dictionariesAndMaps = () => {
+    // Enter your code here
+    // input = input.trim().split("\n");
+
+    const phoneBook = {
+    };
+    const input = "3\nsam 99912222\ntom 11122222\nharry 12299933\nsam\nedward\nharry";
+    const numberOfEntries = parseInt(input.split("\n")[0], 10);
+    const entries = (input.trim().split("\n")).slice(1, numberOfEntries + 1);
+    const searchEntries = (input.trim().split("\n")).slice(numberOfEntries + 1);
+    console.log(numberOfEntries);
+    console.log(entries);
+    console.log(searchEntries);
+
+    for (const item of entries) {
+        const [i, j] = item.split(" ");
+        console.log(i, j);
+        phoneBook[i] = j;
+    }
+
+    for (const key in searchEntries) {
+        if (Object.prototype.hasOwnProperty.call(phoneBook, searchEntries[key])) {
+            console.log(`${searchEntries[key]}=${phoneBook[searchEntries[key]]}`);
+        } else console.log("Not found");
+    }
+};
+/**
+ * 9 Day 9: Recursion 3
+ */
+exports.factorial = () => {
+    // Enter your code here
+    // input = input.trim().split("\n");
+    function factorial (n) {
+        if (n <= 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+};

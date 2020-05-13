@@ -33,9 +33,9 @@ exports.gettingStartedOOP = () => {
     }
 
     const stopWatch = new Stopwatch();
+    // stopWatch.duration;
     stopWatch.start();
+    stopWatch.duration;
 };
 
-exports.prototypes = () => {
-       
-}
+exports.prototypes = () => {};

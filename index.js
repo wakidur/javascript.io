@@ -14,10 +14,12 @@ const {
     countApplesAndOranges,
     kangaroo,
     getTotalX,
-    breakingRecords
+    breakingRecords,
+    birthdayChocolate
 } = require('./algorithms/warmup-problem');
 
-breakingRecords()
+birthdayChocolate([1, 2, 1, 3, 2], 3, 2);
+
 // 10-days-of-javascript
 
 const {
@@ -38,6 +40,9 @@ const {
     modifyArray,
     getDayName
 } = require('./10-days-of-javascript/days-of-javascript');
+
+
+
 // Script-Basics-for-Beginners
 const {
     controlFlow
@@ -67,23 +72,17 @@ const {
     Person,
     loopsFirstTenMultiples,
     processDataStringEventAndOdd,
+    dictionariesAndMaps
 
 } = require('./30-days-of-code/thirty-days-of-code');
 
+// dictionariesAndMaps();
 // JavaScript (Basic) Skills Certification Test
 
 const {
     getCountryName,
 
 } = require('./JavaScript (Basic) Skills Certification Test/country-codes');
-
-
-
-
-
-
-
-
 
 //  plusMinus 6 
 // arr = [-0, -0, -0, 0, -0, -2]
@@ -219,7 +218,7 @@ const {
 /* 
  ************************************ OOP ************************
  */
-gettingStartedOOP();
+// gettingStartedOOP();
 
 
 /**
