@@ -189,7 +189,7 @@ exports.dictionariesAndMaps = () => {
 exports.factorial = () => {
     // Enter your code here
     // input = input.trim().split("\n");
-    function factorial (n) {
+    function factorial(n) {
         if (n <= 1) {
             return 1;
         }

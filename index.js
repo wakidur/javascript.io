@@ -60,7 +60,8 @@ const {
 // OOP 
 
 const {
-    gettingStartedOOP
+    gettingStartedOOP,
+    prototypes
 } = require('./Object-oriented-Programming-in-JavaScript/getting-started');
 
 // 30 Days of Code
