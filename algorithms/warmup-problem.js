@@ -191,7 +191,9 @@ exports.staircase = async (n) => {
  */
 exports.miniMaxSum = async (arr) => {
     try {
-        const { length } = arr;
+        const {
+            length
+        } = arr;
         let minimumSum = 0;
         let maximumSum = 0;
         // Sort objects by date ascending order
@@ -451,7 +453,7 @@ exports.birthdayChocolate = (s, d, m) => {
 /**
  * 17: Divisible Sum Pairs
  * Complete the divisibleSumPairs function below.
- *
+ * birthdayChocolate([1, 2, 1, 3, 2], 3, 2);
  */
 exports.divisibleSumPairs = (n, k, ar) => {
     try {
@@ -468,7 +470,8 @@ exports.divisibleSumPairs = (n, k, ar) => {
 
 
         for (let i = 0; i < n; i += 1) {
-            for (let j = i + 1; j < n; j += 1) if ((i < j) && ((ar[i] + ar[j]) % k === 0)) pairs += 1;
+            for (let j = i + 1; j < n; j += 1)
+                if ((i < j) && ((ar[i] + ar[j]) % k === 0)) pairs += 1;
         }
 
         console.log(pairs);

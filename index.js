@@ -18,7 +18,7 @@ const {
     birthdayChocolate
 } = require('./algorithms/warmup-problem');
 
-birthdayChocolate([1, 2, 1, 3, 2], 3, 2);
+
 
 // 10-days-of-javascript
 
@@ -73,10 +73,11 @@ const {
     Person,
     loopsFirstTenMultiples,
     processDataStringEventAndOdd,
-    dictionariesAndMaps
+    dictionariesAndMaps,
+    binaryNumbers
 
 } = require('./30-days-of-code/thirty-days-of-code');
-
+binaryNumbers();
 // dictionariesAndMaps();
 // JavaScript (Basic) Skills Certification Test
 

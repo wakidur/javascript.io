@@ -14,6 +14,14 @@
     "sourceType": "module"
   },
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow",
+        "usePrettierrc": false
+      }
+    ],
     "indent": ["error", 4],
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "double", { "avoidEscape": true }],

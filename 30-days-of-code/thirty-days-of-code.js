@@ -161,8 +161,7 @@ exports.dictionariesAndMaps = () => {
     // Enter your code here
     // input = input.trim().split("\n");
 
-    const phoneBook = {
-    };
+    const phoneBook = {};
     const input = "3\nsam 99912222\ntom 11122222\nharry 12299933\nsam\nedward\nharry";
     const numberOfEntries = parseInt(input.split("\n")[0], 10);
     const entries = (input.trim().split("\n")).slice(1, numberOfEntries + 1);
@@ -195,4 +194,33 @@ exports.factorial = () => {
         }
         return n * factorial(n - 1);
     }
+};
+
+
+/**
+ * Day 10: Binary Numbers
+ */
+exports.binaryNumbers = () => {
+    console.log("hello");
+    const n = parseInt(13, 10);
+    const num = n.toString(2);
+    let max = 0;
+    let counter = 0;
+    for (let i = 0; i < num.length; i += 1) {
+        if (parseInt(num[i], 10) === 1) {
+            counter += 1;
+            if (counter > max) {
+                max = counter;
+            }
+        } else {
+            counter = 0;
+        }
+    }
+    console.log(max);
+};
+/**
+ * Day 11: 2D Arrays
+ */
+exports.TwoDArrays = () => {
+
 };
