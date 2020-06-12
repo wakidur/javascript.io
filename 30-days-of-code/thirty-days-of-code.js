@@ -70,6 +70,7 @@ exports.introToConditionalStatements = (N) => {
 /**
  * 5 Day 4: Class vs. Instance
  */
+/*
 class Person {
     constructor(initialAge) {
         if (initialAge <= 0) {
@@ -92,6 +93,7 @@ class Person {
 }
 
 const personAge = new Person(14);
+*/
 // console.log(personAge);
 
 /**
@@ -201,7 +203,6 @@ exports.factorial = () => {
  * Day 10: Binary Numbers
  */
 exports.binaryNumbers = () => {
-    console.log("hello");
     const n = parseInt(13, 10);
     const num = n.toString(2);
     let max = 0;
@@ -217,10 +218,192 @@ exports.binaryNumbers = () => {
         }
     }
     console.log(max);
+    this.TwoDArrays();
 };
 /**
  * Day 11: 2D Arrays
  */
 exports.TwoDArrays = () => {
+    function main() {
+        const arr = Array(6);
+        const hourglass = Array(16);
+        for (let i = 0; i < 6; i += 1) {
+            arr[i] = readLine().split(" ").map((arrTemp) => parseInt(arrTemp, 10));
+        }
+        let k = 0;
+        for (let i = 0; i < 4; i += 1) {
+            for (let j = 0; j < 4; j += 1) {
+                const tempArr = [];
+                for (let m = j; m < j + 3; m += 1) {
+                    tempArr.push(arr[i][m]);
+                    tempArr.push(arr[i + 2][m]);
+                }
+                tempArr.push(arr[i + 1][j + 1]);
+                hourglass[k] = tempArr.reduce(myFunc);
+                k += 1;
+            }
+        }
+        console.log(Math.max.apply(null, hourglass));
+    }
+
+    function myFunc(total, value) {
+        return total + value;
+    }
+};
+
+/**
+ * Day 12: Inheritance
+ */
+
+exports.inheritancePersonAndStudent = () => {
+    // class Persons {
+    //     constructor() {
+    //         // Write code
+    //     }
+    // }
+
+    class Student extends Persons {
+        /*
+         *   Class Constructor
+         *
+         *   @param firstName - A string denoting the Person's first name.
+         *   @param lastName - A string denoting the Person's last name.
+         *   @param id - An integer denoting the Person's ID number.
+         *   @param scores - An array of integers denoting the Person's test scores.
+         */
+        // Write your constructor here
+        constructor(firstName, lastName, id, scores) {
+            super();
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.idNumber = id;
+            this.scores = scores;
+        }
+
+        /*
+         *   Method Name: calculate
+         *   @return A character denoting the grade.
+         */
+        // Write your method here
+
+        calculate() {
+            // Desctucturing
+            const {
+                scores
+            } = this;
+            const scoreTotal = scores.reduce((prev, current) => prev + current, 0);
+            const averageScore = scoreTotal / scores.length;
+            if (averageScore >= 90) return "O";
+            if (averageScore >= 80) return "E";
+            if (averageScore >= 70) return "A";
+            if (averageScore >= 55) return "P";
+            if (averageScore >= 40) return "D";
+            return "T";
+        }
+    }
+};
+
+/**
+ * Day 13: Abstract Classes
+ */
+exports.abstractClasses = () => {
+
+    // // Declare your class here.
+    // class MyBook extends Book {
+    //     /**   
+    //      *   Class Constructor
+    //      *   
+    //      *   @param title The book's title.
+    //      *   @param author The book's author.
+    //      *   @param price The book's price.
+    //      **/
+    //     // Write your constructor here
+    //     constructor(title, author, price) {
+    //         super(title, author);
+    //         this.price = price;
+    //     }
+    //     /**   
+    //      *   Method Name: display
+    //      *   
+    //      *   Print the title, author, and price in the specified format.
+    //      **/
+    //     // Write your method here
+    //     display() {
+    //         console.log(`Title: ${title}`);
+    //         console.log(`Author: ${author}`);
+    //         console.log(`Price: ${price}`);
+    //     }
+    // }
+    // // End class
 
 };
+
+/**
+ * Day 14: Scope
+ */
+
+exports.scores = () => {
+    /**
+    c++
+    Difference(vector<int> a) {
+        this -> elements = a;
+    }
+    void computeDifference(){
+        int maxValue = elements[elements.size()-1], minValue = elements[0]; 
+        for (int i = 0; i < elements.size(); i++){
+            if (maxValue < elements[i]){
+                maxValue = elements[i];
+            }
+        }
+        for (int i = 0; i < elements.size(); i++){
+            if (minValue > elements[i]){
+                minValue = elements[i];
+            }
+        }
+        maximumDifference = maxValue - minValue;
+    }
+
+     */
+}
+/**
+ * Day 15: Linked List
+ */
+
+exports.linkedList = () => {
+    function Solution() {
+
+        this.insert = function (head, data) {
+            //complete this method
+            // Create a new node with the data passed in
+            newNode = new Node(data);
+            // Set the current node as the passed in head
+            curNode = head;
+
+            // If the current node is not null (it has values), walk the node list
+            if (curNode != null) {
+                while (curNode.next != null) {
+                    curNode = curNode.next;
+                }
+                curNode.next = newNode;
+            }
+            // Otherwise, if the list is empty, return the created node
+            else {
+                head = newNode;
+            }
+
+            return head;
+        };
+
+        this.display = function (head) {
+            var start = head;
+            while (start) {
+                process.stdout.write(start.data + " ");
+                start = start.next;
+            }
+        };
+    }
+}
+
+/**
+ * Day 16: Exceptions - String to Integer
+ */
