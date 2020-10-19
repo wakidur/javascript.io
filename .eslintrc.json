@@ -14,9 +14,17 @@
     "sourceType": "module"
   },
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow",
+        "usePrettierrc": false
+      }
+    ],
     "indent": ["error", 4],
     "linebreak-style": ["error", "windows"],
-    "quotes": ["error",  "double", { "avoidEscape": true }],
+    "quotes": ["error", "double", { "avoidEscape": true }],
     "semi": ["error", "always"],
     "prefer-const": [
       "error",
@@ -25,6 +33,7 @@
         "ignoreReadBeforeAssign": false
       }
     ],
+    "no-cond-assign": "error",
     "object-curly-newline": [
       "error",
       {
@@ -34,7 +43,7 @@
         "ExportDeclaration": { "multiline": true, "minProperties": 3 }
       }
     ],
-    // "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": "off",
     // "no-restricted-syntax": [
     //   "error",
     //   {
@@ -44,10 +53,15 @@
     //   {
     //     "selector": "CallExpression[callee.name='setTimeout'][arguments.length!=2]",
     //     "message": "setTimeout must always be invoked with two arguments."
+    //   },
+    //   {
+    //     "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+    //     "message": "Unexpected property on console object was called"
     //   }
     // ],
     "no-new": "error",
     "no-trailing-spaces": "error",
-    "no-plusplus": "error" // Avoid using unary increments and decrements (++, --). eslint no-plusplus
+    "no-plusplus": "error", // Avoid using unary increments and decrements (++, --). eslint no-plusplus
+    "no-prototype-builtins": "error" // Disallow use of Object.prototypes builtins directly (no-prototype-builtins)
   }
 }
