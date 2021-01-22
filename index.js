@@ -7,7 +7,7 @@ const {
     diagonalDifference,
     plusMinus,
     staircase,
-    miniMaxSum,
+    minimaxValueSum,
     birthdayCakeCandles,
     timeConversion,
     gradingStudents,
@@ -77,7 +77,7 @@ const {
     binaryNumbers
 
 } = require('./30-days-of-code/thirty-days-of-code');
-binaryNumbers();
+// binaryNumbers();
 // dictionariesAndMaps();
 // JavaScript (Basic) Skills Certification Test
 
@@ -228,3 +228,38 @@ const {
  */
 // loopsFirstTenMultiples(2);
 // processDataStringEventAndOdd(2);
+
+/**
+ * Gsquad Fullstack Developer with JavaScript 
+ */
+
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+            const intArrayLength = A.length;
+            let output = 0; 
+
+            for (let i = 0; i < intArrayLength - 1;) {
+                if (A[i] == A[i + 1]) 
+                    output = output + 1;
+                    i = i + 1;
+            }      
+            if (output === intArrayLength - 1) return output - 1;
+
+            let maxValue = 0;
+            for (let i = 0; i < intArrayLength; i++) {
+                let count = 0;
+                if (i > 0)  {
+                    if (A[i-1] !== A[i]) count = count + 1;    
+                    else count = count - 1;
+                }
+                if (i < intArrayLength - 1) {
+                    if (A[i] !== A[i + 1]) count = count + 1;
+                    else count = count - 1;
+                }               
+                maxValue = Math.max(maxValue, count);              
+            }    
+            return output + maxValue; 
+    
+   }
+const A = [1,0,1,0, 1, 1];
+console.log(solution(A));
